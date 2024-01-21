@@ -1,31 +1,73 @@
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Script main.js carregado.');
 
+    const pokemonList = document.getElementById('pokemonList');
+    const loadMoreButton = document.getElementById('loadMoreButton');
 
-function convertPokemonToLi(pokemon) {
-    return `
-            <li class="pokemon">
-                <span class="number">#001</span>
-                <span class="name">${pokemon.name}</span>
+    const maxRecords = 151;
+    const limit = 10;
+    let offset = 0;
 
-                <div class="detail">
-                    <ol class="types">
-                        <li class="type">grass</li>
-                        <li class="type">poison</li>
-                    </ol>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="${pokemon.name}">
-                </div>
-            </li>
-        `
-}
+    function convertPokemonToLi(pokemon) {
+        const listItem = document.createElement('li');
+        listItem.classList.add('pokemon', pokemon.type);
+        listItem.innerHTML = `
+            <span class="number">#${pokemon.number}</span>
+            <span class="name">${pokemon.name}</span>
 
-const pokemonList = document.getElementById('pokemonList')
+            <div class="detail">
+                <ol class="types">
+                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                </ol>
 
+                <img src="${pokemon.photo}" alt="${pokemon.name}">
+            </div>
+        `;
 
+        listItem.addEventListener('click', () => showDetails(JSON.stringify(pokemon)));
 
-    PokeAPI.getPokemons().then((pokemons = []) => {
+        return listItem;
+    }
 
-        // map ->Pega a lista de pokemons e transforma em uma lista de html
-        // join -> Junta as listas html em uma unica string
-        pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
+    function loadPokemonItens(offset, limit) {
+        pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+            const newItems = pokemons.map(convertPokemonToLi);
+            newItems.forEach((item) => pokemonList.appendChild(item));
+        });
+    }
 
-    })
-    .catch((error) => console.log(error))
+    function handleLoadMoreClick() {
+        offset += limit;
+        const qtdRecordsWithNextPage = offset + limit;
+
+        if (qtdRecordsWithNextPage >= maxRecords) {
+            const newLimit = maxRecords - offset;
+            loadPokemonItens(offset, newLimit);
+            loadMoreButton.parentElement.removeChild(loadMoreButton);
+        } else {
+            loadPokemonItens(offset, limit);
+        }
+    }
+
+    function showDetails(pokemon) {
+        const parsedPokemon = JSON.parse(pokemon);
+
+        console.log(parsedPokemon);
+        const pokemonId = parsedPokemon.number;
+    
+        console.log(pokemonId);
+    
+        if (pokemonId) {
+            // Redireciona para a página de detalhes com os dados do Pokémon
+            window.location.href = `../infoPokemon.html?id=${pokemonId}`;
+        } else {
+            console.error("Detalhes inválidos do Pokémon:", pokemon);
+            // Exiba uma mensagem de erro ou faça algo apropriado para lidar com a situação
+        }
+    }
+    
+
+    loadPokemonItens(offset, limit);
+
+    loadMoreButton.addEventListener('click', handleLoadMoreClick);
+});

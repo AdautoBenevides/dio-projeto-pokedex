@@ -1,0 +1,349 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+
+body {
+    display: block;
+    margin: 0px;
+}
+
+.android-large-class {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.android-large-class .div {
+    background-color: #ffffff;
+    width: 360px;
+    height: 800px;
+    position: relative;
+}
+
+.android-large-class .overlap-group {
+    position: absolute;
+    width: 360px;
+    height: 270px;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(99, 188, 90, 1); */
+    background-size: 100% 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.android-large-class .img-pokemon {
+    
+    max-width: 100%;
+    position: absolute;
+    /* width: 360px; */
+    height: 100%;
+    margin-left: 3rem;
+    object-fit: cover;
+}
+
+.android-large-class .caractersticas {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+    top: 400px;
+    left: 16px;
+}
+
+.android-large-class .peso-altura {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .div-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .frame {
+    display: inline-flex;
+    justify-content: center;
+    gap: 6px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .img {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.android-large-class .peso {
+    position: relative;
+    width: 33px;
+    height: 15px;
+    margin-top: -0.5px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #00000099;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: normal;
+}
+
+.android-large-class .element-kg-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 154px;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: #0000001a;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000e6;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.android-large-class .altura {
+    position: relative;
+    width: 48px;
+    height: 15px;
+    margin-top: -0.5px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #00000099;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: normal;
+}
+
+.android-large-class .div-wrapper {
+    display: flex;
+    width: 154px;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: #0000001a;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .categoria-habilidade {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .habilidade {
+    position: relative;
+    width: 74px;
+    height: 15px;
+    margin-top: -0.5px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #00000099;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: normal;
+}
+
+.android-large-class .elementos {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+    position: absolute;
+    top: 301px;
+    left: 231px;
+}
+
+.android-large-class .elementos .type{
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    font-size: .8rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    list-style: none;
+}
+.android-large-class .elemento-pokmon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 14px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #77C850;
+    border-radius: 67px;
+}
+
+.android-large-class .frame-2 {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.android-large-class .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--escala-de-cinzapreto);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.android-large-class .component {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 14px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--elementosvenenoso);
+    border-radius: 67px;
+}
+
+.android-large-class .nome-n {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 297px;
+    left: 24px;
+}
+
+.android-large-class .text-wrapper-3 {
+    padding-bottom: 10px;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--escala-de-cinzapreto);
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.android-large-class .text-wrapper-4 {
+    position: relative;
+    width: 67px;
+    height: 22px;
+    margin-top: -5px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000b2;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+}
