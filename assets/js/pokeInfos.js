@@ -12,25 +12,25 @@ pokeApi.getPokemonDetailById(pokemonId)
           // Adiciona a classe correspondente ao tipo do Pokémon
           overlapGroup.classList.add(pokemon.type);
 
-        //Atribui o nome do Pokémon ao elemento `<span class="text-wrapper-3">`
+        //Atribui o nome do Pokémon 
         document.querySelector('#nome_pokemon').textContent = pokemon.name;
 
-        // Atribui o número do Pokémon ao elemento `<span class="text-wrapper-4">`
+        // Atribui o número do Pokémon 
         document.querySelector('#nmr_pokemon').textContent = `Nº${pokemon.number}`;
 
-        // Atribui a imagem do Pokémon ao elemento `<img>`
+        // Atribui a imagem do Pokémon 
         document.querySelector('#img_pokemon').src = pokemon.photo;
 
-        // Atribui o peso do Pokémon ao elemento `<span class="weight">`
+        // Atribui o peso do Pokémon
         document.querySelector('#peso_dinamico').textContent = `${pokemon.weight} kg`;
 
-        // Atribui a altura do Pokémon ao elemento `<span class="height">`
+        // Atribui a altura d
         document.querySelector('#altura_dinamica').textContent = `${pokemon.height} m`;
 
-        // Atribui a habilidade do Pokémon ao elemento `<span class="ability">`
+        // Atribui a habilidade do Pokémon
         document.querySelector('#ability').textContent = pokemon.abilities[0];
 
-        // Atribui os tipos do Pokémon ao elemento `<ol class="types">`
+        // Atribui os tipos do Pokémon
         const types = pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`);
         document.querySelector('.elementos').innerHTML = types.join('');
     })
